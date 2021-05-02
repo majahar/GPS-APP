@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "GPS-APP"
+  "defaultProject": "GPS-APP",
+  "cli": {
+    "analytics": "592c89ba-bc16-41d6-984b-49573e46d3be"
+  }
 }

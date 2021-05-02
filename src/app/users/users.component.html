@@ -1,0 +1,59 @@
+<main role="main" class="container">
+        <h1 class="mt-5">&nbsp;</h1>
+        <h5 class="mt-5">Users</h5>
+        <br/>
+        <div class="loader" *ngIf="dataLoading"></div>
+        <div class="alert alert-danger" role="alert" *ngIf="error">
+        An error occured. Here is the error : {{ errorMessage }}.
+      </div> <div class="alert alert-success" role="alert" *ngIf="success">
+           {{ successMessage }}.
+        </div>
+
+      <br/><br/>
+    <!-- <table>
+      <th>Date Time</th>
+      <th>Name</th>
+      <th>GPS(Lat/Long)</th>
+      <tr *ngFor="let item of myDocData">
+        <td>{{item.createdAt}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.lat}}/{{item.long}}</td>
+      </tr>
+    </table> -->
+    <table class="table" style="border: 1px solid;">
+            <thead>
+              <tr >
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of userData; let i = index ">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.email}}</td>
+
+
+                    <td><button class="btn btn-success" (click)="deleteUser(item)"> Delete</button>
+                      <button class="btn btn-success" (click)="editUser(item)" style="margin-left: 20px;"> Edit</button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <div class="pagination pagination-sm m-0 float-right">
+<!--               <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+ -->             <!--  <ul>
+                  <li  class="page-item previous-item">
+                      <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+                  </li>
+                  
+                  <li class="page-item next-item">
+                      <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+                  </li>
+              </ul> -->
+          </div>
+      </main>
